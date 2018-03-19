@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LibraryApp.Authors.DTO
+﻿namespace LibraryApp.AppServices.Books.DTO
 {
 public	class GetBookInput
 	{

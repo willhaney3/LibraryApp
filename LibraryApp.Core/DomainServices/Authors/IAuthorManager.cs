@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Abp.Domain.Services;
 
-namespace LibraryApp.Models
+namespace LibraryApp.DomainServices.Authors
 {
 	public interface IAuthorManager : IDomainService
 	{

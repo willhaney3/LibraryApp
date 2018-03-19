@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using AutoMapper;
-using LibraryApp.Authors.DTO;
-using LibraryApp.Models;
+using LibraryApp.AppServices.Authors.DTO;
+using LibraryApp.DomainServices.Authors;
 
-namespace LibraryApp.Authors
+namespace LibraryApp.AppServices.Authors
 {
 	public class AuthorAppService:ApplicationService, IAuthorAppService
 	{
