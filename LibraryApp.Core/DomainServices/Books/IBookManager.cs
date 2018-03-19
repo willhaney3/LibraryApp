@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Abp.Domain.Services;
 
 namespace LibraryApp.Models
 {
-	interface IBookManager
+	public interface IBookManager : IDomainService
 	{
 		IEnumerable<Book> GetAllListBooks();
 		Book GetBookById(int id);

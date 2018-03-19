@@ -192,6 +192,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppServices\Authors\AuthorAppService.cs" />
+    <Compile Include="AppServices\Books\BookAppService.cs" />
+    <Compile Include="AppServices\Books\DTO\CreateBookInput.cs" />
+    <Compile Include="AppServices\Authors\DTO\DeleteAuthorInput.cs" />
+    <Compile Include="AppServices\Authors\DTO\CreateAuthorInput.cs" />
+    <Compile Include="AppServices\Books\DTO\DeleteBookInput.cs" />
+    <Compile Include="AppServices\Authors\DTO\GetAuthorInput.cs" />
+    <Compile Include="AppServices\Authors\DTO\GetAuthorOutput.cs" />
+    <Compile Include="AppServices\Books\DTO\GetBookInput.cs" />
+    <Compile Include="AppServices\Books\DTO\GetBookOutput.cs" />
+    <Compile Include="AppServices\Books\IBookAppService.cs" />
+    <Compile Include="AppServices\Authors\DTO\UpdateAuthorInput.cs" />
+    <Compile Include="AppServices\Books\DTO\UpdateBookInput.cs" />
+    <Compile Include="AppServices\Authors\IAuthorAppService.cs" />
+    <Compile Include="AppServices\Categories\CategoryAppService.cs" />
+    <Compile Include="AppServices\Categories\DTO\CreateCategoryInput.cs" />
+    <Compile Include="AppServices\Categories\DTO\DeleteCategoryInput.cs" />
+    <Compile Include="AppServices\Categories\DTO\GetCategoryInput.cs" />
+    <Compile Include="AppServices\Categories\DTO\GetCategoryOutput.cs" />
+    <Compile Include="AppServices\Categories\DTO\UpdateCategoryInput.cs" />
+    <Compile Include="AppServices\Categories\ICategoryAppService.cs" />
     <Compile Include="LibraryAppApplicationModule.cs" />
     <Compile Include="LibraryAppAppServiceBase.cs" />
     <Compile Include="Authorization\Accounts\AccountAppService.cs" />
