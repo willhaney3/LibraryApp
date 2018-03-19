@@ -222,6 +222,10 @@
     <Compile Include="Migrations\201803191544219_Initial.Designer.cs">
       <DependentUpon>201803191544219_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803191554014_models.cs" />
+    <Compile Include="Migrations\201803191554014_models.Designer.cs">
+      <DependentUpon>201803191554014_models.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="LibraryAppDataModule.cs" />
@@ -256,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803191544219_Initial.resx">
       <DependentUpon>201803191544219_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803191554014_models.resx">
+      <DependentUpon>201803191554014_models.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
