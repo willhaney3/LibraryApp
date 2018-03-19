@@ -4,7 +4,7 @@ using Abp.Domain.Repositories;
 using Abp.Domain.Services;
 using Abp.UI;
 
-namespace LibraryApp.Models
+namespace LibraryApp.DomainServices.Authors
 {
 	public class AuthorManager : DomainService, IAuthorManager
 	{

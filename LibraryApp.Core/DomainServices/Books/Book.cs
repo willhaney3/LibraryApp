@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Abp.Domain.Entities.Auditing;
+using LibraryApp.DomainServices.Authors;
+using LibraryApp.DomainServices.Categories;
 
-namespace LibraryApp.Models
+namespace LibraryApp.DomainServices.Books
 {
 	public class Book: FullAuditedEntity
 	{

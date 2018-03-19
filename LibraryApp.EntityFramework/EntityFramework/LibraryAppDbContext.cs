@@ -3,7 +3,9 @@ using System.Data.Entity;
 using Abp.Zero.EntityFramework;
 using LibraryApp.Authorization.Roles;
 using LibraryApp.Authorization.Users;
-using LibraryApp.Models;
+using LibraryApp.DomainServices.Authors;
+using LibraryApp.DomainServices.Books;
+using LibraryApp.DomainServices.Categories;
 using LibraryApp.MultiTenancy;
 
 namespace LibraryApp.EntityFramework

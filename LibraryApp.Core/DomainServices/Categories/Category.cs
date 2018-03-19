@@ -1,8 +1,9 @@
-﻿using Abp.Domain.Entities.Auditing;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Abp.Domain.Entities.Auditing;
+using LibraryApp.DomainServices.Books;
 
-namespace LibraryApp.Models
+namespace LibraryApp.DomainServices.Categories
 {
 	public class Category:FullAuditedEntity
 	{

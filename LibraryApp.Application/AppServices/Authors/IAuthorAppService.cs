@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Abp.Application.Services;
-using LibraryApp.Authors.DTO;
+using LibraryApp.AppServices.Authors.DTO;
 
-namespace LibraryApp.Authors
+namespace LibraryApp.AppServices.Authors
 {
-	interface IAuthorAppService:IApplicationService
+	public interface IAuthorAppService:IApplicationService
 	{
 		IEnumerable<GetAuthorOutput> ListAll();
 		Task Create(CreateAuthorInput input);

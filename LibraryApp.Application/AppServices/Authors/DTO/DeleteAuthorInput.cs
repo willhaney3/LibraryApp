@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LibraryApp.Authors
+﻿namespace LibraryApp.AppServices.Authors.DTO
 {
 	public class DeleteAuthorInput
 	{

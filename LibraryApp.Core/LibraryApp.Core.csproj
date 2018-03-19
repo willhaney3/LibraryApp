@@ -200,11 +200,11 @@
     <Compile Include="Configuration\AppSettingProvider.cs" />
     <Compile Include="Editions\EditionManager.cs" />
     <Compile Include="Features\FeatureValueStore.cs" />
-    <Compile Include="Models\Author.cs" />
+    <Compile Include="DomainServices\Authors\Author.cs" />
     <Compile Include="DomainServices\Authors\AuthorManager.cs" />
-    <Compile Include="Models\Book.cs" />
+    <Compile Include="DomainServices\Books\Book.cs" />
     <Compile Include="DomainServices\Books\BookManager.cs" />
-    <Compile Include="Models\Category.cs" />
+    <Compile Include="DomainServices\Categories\Category.cs" />
     <Compile Include="DomainServices\Categories\CategoryManager.cs" />
     <Compile Include="DomainServices\Authors\IAuthorManager.cs" />
     <Compile Include="DomainServices\Books\IBookManager.cs" />
@@ -253,9 +253,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Localization\Source\LibraryApp-vi.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Manager\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

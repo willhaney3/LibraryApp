@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Abp.Domain.Entities.Auditing;
+using LibraryApp.DomainServices.Books;
 
-namespace LibraryApp.Models
+namespace LibraryApp.DomainServices.Authors
 {
 	public class Author: FullAuditedEntity
 	{

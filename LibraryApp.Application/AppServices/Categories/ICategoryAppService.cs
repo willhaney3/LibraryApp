@@ -8,7 +8,7 @@ using LibraryApp.AppServices.Categories.DTO;
 
 namespace LibraryApp.AppServices.Categories
 {
-	interface ICategoryAppService : IApplicationService
+	public interface ICategoryAppService : IApplicationService
 	{
 		IEnumerable<GetCategoryOutput> ListAll();
 		Task Create(CreateCategoryInput input);
