@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using Abp.Domain.Services;
@@ -9,7 +6,7 @@ using Abp.UI;
 
 namespace LibraryApp.Models
 {
-	public class AuthorManager:DomainService, IAuthorManager
+	public class AuthorManager : DomainService, IAuthorManager
 	{
 		private readonly IRepository<Author> _repositoryAuthor;
 
