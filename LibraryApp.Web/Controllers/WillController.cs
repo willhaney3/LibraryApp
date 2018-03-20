@@ -1,22 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using LibraryApp.AppServices.Authors;
+using System.Web.WebSockets;
+using LibraryApp.AppServices.Authors.DTO;
 
 namespace LibraryApp.Web.Controllers
 {
 	public class WillController : LibraryAppControllerBase
 	{
-		private readonly IAuthorAppService _authorAppService;
-
-		public WillController(IAuthorAppService authorAppService)
+		private readonly LibraryApp.AppServices.Authors.IAuthorAppService _authorAppService;
+		public WillController(LibraryApp.AppServices.Authors.IAuthorAppService authorAppService)
 		{
 			_authorAppService = authorAppService;
 		}
 
 		// GET: Will
+		[HttpGet]
 		public ActionResult Index()
 		{
 
@@ -25,76 +27,21 @@ namespace LibraryApp.Web.Controllers
 			return View(x);
 		}
 
-		// GET: Will/Details/5
-		public ActionResult Details(int id)
-		{
-			return View();
-		}
-
-		// GET: Will/Create
-		public ActionResult Create()
-		{
-			return View();
-		}
-
-		// POST: Will/Create
 		[HttpPost]
-		public ActionResult Create(FormCollection collection)
+		public async Task Register(string DisplayName, DateTime BirthDate)
 		{
-			try
+
+			await _authorAppService.Create(new CreateAuthorInput()
 			{
-				// TODO: Add insert logic here
+				BirthDate = BirthDate,
+				DisplayName = DisplayName,
+				CreationTime = DateTime.Now,
+			DeathDate = null
 
-				return RedirectToAction("Index");
-			}
-			catch
-			{
-				return View();
-			}
-		}
 
-		// GET: Will/Edit/5
-		public ActionResult Edit(int id)
-		{
-			return View();
-		}
+			});
 
-		// POST: Will/Edit/5
-		[HttpPost]
-		public ActionResult Edit(int id, FormCollection collection)
-		{
-			try
-			{
-				// TODO: Add update logic here
-
-				return RedirectToAction("Index");
-			}
-			catch
-			{
-				return View();
-			}
-		}
-
-		// GET: Will/Delete/5
-		public ActionResult Delete(int id)
-		{
-			return View();
-		}
-
-		// POST: Will/Delete/5
-		[HttpPost]
-		public ActionResult Delete(int id, FormCollection collection)
-		{
-			try
-			{
-				// TODO: Add delete logic here
-
-				return RedirectToAction("Index");
-			}
-			catch
-			{
-				return View();
-			}
+			
 		}
 	}
 }

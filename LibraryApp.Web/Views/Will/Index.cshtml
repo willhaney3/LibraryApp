@@ -1,17 +1,36 @@
-﻿
-@model IEnumerable<LibraryApp.AppServices.Authors.DTO.GetAuthorOutput>
-
+﻿@model IEnumerable<LibraryApp.AppServices.Authors.DTO.GetAuthorOutput>
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	Layout = null;
 }
 
-<h2>Index</h2>
+<!DOCTYPE html>
 
-@foreach (var x in Model)
-{
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Index</title>
+</head>
+<body>
+	<form action="/Will/Register" method="post">
+		<div>
+			@foreach (var x in Model)
+			{
 
-	@x.Id
-}
-
-
+				@x.DisplayName
+			}
+			<table>
+				<tr>
+					<td>Name:</td>
+					<td><input type="text" name="DisplayName" /></td>
+				</tr>
+				<tr>
+					<td>Birth Date:</td>
+					<td><input type="text" name="BirthDate"/></td>
+				</tr>
+			</table>
+			
+		</div>
+		<button type="submit">Submit</button>
+	</form>
+</body>
+</html>
