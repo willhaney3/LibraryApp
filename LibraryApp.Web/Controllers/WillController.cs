@@ -5,26 +5,21 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.WebSockets;
+using LibraryApp.AppServices.Authors;
 using LibraryApp.AppServices.Authors.DTO;
 
 namespace LibraryApp.Web.Controllers
 {
 	public class WillController : LibraryAppControllerBase
 	{
-		private readonly LibraryApp.AppServices.Authors.IAuthorAppService _authorAppService;
-		public WillController(LibraryApp.AppServices.Authors.IAuthorAppService authorAppService)
-		{
-			_authorAppService = authorAppService;
-		}
+
+		public IAuthorAppService _authorAppService { get; set; }
 
 		// GET: Will
 		[HttpGet]
 		public ActionResult Index()
 		{
-
-			var x = _authorAppService.ListAll();
-
-			return View(x);
+			return View(_authorAppService.ListAll());
 		}
 
 		[HttpGet]
@@ -32,23 +27,19 @@ namespace LibraryApp.Web.Controllers
 		{
 			return View();
 		}
-
-
+		
 		[HttpPost]
-		public async Task Register(string DisplayName, DateTime BirthDate)
+		public ActionResult Register(string DisplayName, DateTime BirthDate)
 		{
-
-			await _authorAppService.Create(new CreateAuthorInput()
+			 _authorAppService.Create(new CreateAuthorInput()
 			{
 				BirthDate = BirthDate,
 				DisplayName = DisplayName,
 				CreationTime = DateTime.Now,
 				DeathDate = null
-
-
 			});
 
-
+			return RedirectToAction("Index", "Will");
 		}
 	}
 }

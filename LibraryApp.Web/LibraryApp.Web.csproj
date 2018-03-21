@@ -3789,7 +3789,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Will\Register.cshtml" />
     <Content Include="Views\Will\Index.cshtml" />
     <Content Include="Views\Will\New.cshtml" />
     <None Include="Web.Debug.config">

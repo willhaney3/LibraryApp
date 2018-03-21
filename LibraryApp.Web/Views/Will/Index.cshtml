@@ -13,17 +13,46 @@
 <body>
 	<form action="/Will/Register" method="post">
 		<div>
-			<ul></ul>
-			@foreach (var x in Model)
-			{
-				<li>
-					@x.DisplayName
-				</li>
-			}
-			</ul>
 
+			<input type="button" value="New" onclick="@("window.location.href='" + @Url.Action("New", "Will") + "'");" />
+
+			<table>
+				<tr>
+					<th></th>
+					<th style="background-color: #3399FF">
+						Id
+					</th>
+					<th style="background-color: #9999FF">
+						Name
+					</th>
+					<th style="background-color: #6699FF">
+						DOB
+					</th>
+				</tr>
+
+
+				@foreach (var item in Model)
+	{
+			<tr>
+				<td>
+					@Html.ActionLink("Edit", "Edit", new { id = item.Id })
+					@Html.ActionLink("Details", "Details", new { id = item.Id })
+					@Html.ActionLink("Delete", "Delete", new { id = item.Id })
+				</td>
+				<td>
+					@item.Id
+				</td>
+				<td>
+					@item.DisplayName
+				</td>
+				<td>
+					@item.BirthDate.ToString("d")
+				</td>
+			</tr>
+}
+			</table>
 		</div>
-		<input type="button" value="New" onclick="@("window.location.href='" + @Url.Action("New", "Will") + "'");" />
+
 
 	</form>
 </body>
