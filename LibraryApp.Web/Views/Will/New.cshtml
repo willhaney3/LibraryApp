@@ -1,0 +1,36 @@
+﻿<!--
+https://stackoverflow.com/questions/27182606/asp-mvc-5-client-validation-for-range-of-datetimes
+-->
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>New</title>
+</head>
+<body>
+	<div>
+		<form action="/Will/Register" method="post">
+			<div>
+				<table>
+					<tr>
+						<td>Name:</td>
+						<td><input type="text" required name="DisplayName" autofocus autocomplete="true" /></td>
+					</tr>
+					<tr>
+						<td>Birth Date:</td>
+						<td><input type="date" required name="BirthDate" /></td>
+					</tr>
+				</table>
+
+			</div>
+			<button type="submit">Submit</button>
+			<input type="button" value="List" onclick="@("window.location.href='" + @Url.Action("Index", "Will") + "'");" />
+		</form>
+	</div>
+</body>
+</html>

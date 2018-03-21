@@ -13,24 +13,18 @@
 <body>
 	<form action="/Will/Register" method="post">
 		<div>
+			<ul></ul>
 			@foreach (var x in Model)
 			{
-
-				@x.DisplayName
+				<li>
+					@x.DisplayName
+				</li>
 			}
-			<table>
-				<tr>
-					<td>Name:</td>
-					<td><input type="text" name="DisplayName" /></td>
-				</tr>
-				<tr>
-					<td>Birth Date:</td>
-					<td><input type="text" name="BirthDate"/></td>
-				</tr>
-			</table>
-			
+			</ul>
+
 		</div>
-		<button type="submit">Submit</button>
+		<input type="button" value="New" onclick="@("window.location.href='" + @Url.Action("New", "Will") + "'");" />
+
 	</form>
 </body>
 </html>

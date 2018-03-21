@@ -27,6 +27,13 @@ namespace LibraryApp.Web.Controllers
 			return View(x);
 		}
 
+		[HttpGet]
+		public ActionResult New()
+		{
+			return View();
+		}
+
+
 		[HttpPost]
 		public async Task Register(string DisplayName, DateTime BirthDate)
 		{
@@ -36,12 +43,12 @@ namespace LibraryApp.Web.Controllers
 				BirthDate = BirthDate,
 				DisplayName = DisplayName,
 				CreationTime = DateTime.Now,
-			DeathDate = null
+				DeathDate = null
 
 
 			});
 
-			
+
 		}
 	}
 }

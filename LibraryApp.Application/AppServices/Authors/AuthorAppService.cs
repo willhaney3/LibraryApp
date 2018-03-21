@@ -28,14 +28,14 @@ namespace LibraryApp.AppServices.Authors
 
 		public async Task Create(CreateAuthorInput input)
 		{
-			//var output = Mapper.Map<CreateAuthorInput, Author>(input);
-
-			var output = new Author()
-			{
-				DisplayName = input.DisplayName,
-				BirthDate = input.BirthDate,
-				CreatorUserId = 1,
-			};
+			var output = Mapper.Map<CreateAuthorInput, Author>(input);
+			
+			//var output = new Author()
+			//{
+			//	DisplayName = input.DisplayName,
+			//	BirthDate = input.BirthDate,
+			//	CreatorUserId = 1,
+			//};
 
 			await _authorManager.Create(output);
 		}
