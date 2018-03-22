@@ -6,7 +6,7 @@ using LibraryApp.DomainServices.Books;
 
 namespace LibraryApp.DomainServices.Authors
 {
-	public class Author: FullAuditedEntity
+	public class Author: FullAuditedEntity<int>
 	{
 		
 		public Author()
@@ -20,7 +20,9 @@ namespace LibraryApp.DomainServices.Authors
 		public string DisplayName { get; set; }
 		
 		[Required]
+		[DataType(DataType.DateTime)]
 		public DateTime BirthDate { get; set; }
+		[DataType(DataType.DateTime)]
 		public DateTime? DeathDate { get; set; }
 
 		public virtual ICollection<Book> Books { get; set; }

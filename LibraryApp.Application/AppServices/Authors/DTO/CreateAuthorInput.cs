@@ -2,7 +2,7 @@
 
 namespace LibraryApp.AppServices.Authors.DTO
 {
-public class CreateAuthorInput
+	public class CreateAuthorInput
 	{
 		public string DisplayName { get; set; }
 		public DateTime CreationTime { get; set; }

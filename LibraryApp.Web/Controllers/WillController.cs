@@ -27,7 +27,24 @@ namespace LibraryApp.Web.Controllers
 		{
 			return View();
 		}
-		
+
+		[HttpGet]
+		public ActionResult Delete(int id)
+		{
+			_authorAppService.Delete(new DeleteAuthorInput { Id = id });
+			return RedirectToAction("Index", "Will");
+		}
+
+		[HttpGet]
+		public ActionResult Edit(int id)
+		{
+			var author = _authorAppService.GetAuthorById(new GetAuthorInput { Id = id });
+
+			return View(author);
+			
+		}
+
+
 		[HttpPost]
 		public ActionResult Register(string DisplayName, DateTime BirthDate)
 		{
@@ -41,5 +58,22 @@ namespace LibraryApp.Web.Controllers
 
 			return RedirectToAction("Index", "Will");
 		}
+
+		[HttpPost]
+		public ActionResult Update(int id, string DisplayName, DateTime BirthDate)
+		{
+			var output = new UpdateAuthorInput
+			{
+				Id = id,
+				DisplayName = DisplayName,
+				BirthDate = BirthDate
+			};
+
+			_authorAppService.Update(output);
+
+			return RedirectToAction("Index", "Will");
+		}
+
+
 	}
 }

@@ -30,9 +30,12 @@ namespace LibraryApp
 			Configuration.Modules.AbpAutoMapper().Configurators.Add(cfg =>
 			{
 
-				//cfg.CreateMap<Author, CreateAuthorInput>().ForAllOtherMembers(o => o.Ignore());
 				//cfg.CreateMap<CreateAuthorInput, Author>().ForAllOtherMembers(o => o.Ignore());
 				cfg.CreateMap<CreateAuthorInput, Author>();
+
+				//cfg.CreateMap<UpdateAuthorInput, Author>().ForAllOtherMembers(o => o.Ignore());
+				cfg.CreateMap<UpdateAuthorInput, Author>();
+
 
 				// Role and permission
 				cfg.CreateMap<Permission, string>().ConvertUsing(r => r.Name);

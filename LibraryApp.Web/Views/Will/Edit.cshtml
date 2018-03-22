@@ -1,0 +1,38 @@
+﻿@model LibraryApp.AppServices.Authors.DTO.GetAuthorOutput
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>Edit</title>
+</head>
+<body>
+	<div>
+		<form action="/Will/Update" method="post">
+
+			<table>
+				<tr>
+					<td>Id:</td>
+					<td><label>@Model.Id</label></td>
+				</tr>
+				<tr>
+					<td>Name:</td>
+					<td><input type="text" value="@Model.DisplayName" required name="DisplayName" autofocus autocomplete="true" /></td>
+				</tr>
+				<tr>
+					<td>Birth Date:</td>
+					<td><input type="date" value="@string.Format("{0:yyyy-MM-dd}", Model.BirthDate)" required name="BirthDate" /></td>
+				</tr>
+			</table>
+			@Html.HiddenFor(m => m.Id)
+			<button type="submit">Submit</button>
+
+			<input type="button" value="List" onclick="@("window.location.href='" + @Url.Action("Index", "Will") + "'");" />
+		</form>
+	</div>
+</body>
+</html>
