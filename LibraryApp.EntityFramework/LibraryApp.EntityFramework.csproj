@@ -226,6 +226,14 @@
     <Compile Include="Migrations\201803191554014_models.Designer.cs">
       <DependentUpon>201803191554014_models.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803221718215_Rename table Authors to Author.cs" />
+    <Compile Include="Migrations\201803221718215_Rename table Authors to Author.Designer.cs">
+      <DependentUpon>201803221718215_Rename table Authors to Author.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803221721110_Rename Books and Categories to Book and Category.cs" />
+    <Compile Include="Migrations\201803221721110_Rename Books and Categories to Book and Category.Designer.cs">
+      <DependentUpon>201803221721110_Rename Books and Categories to Book and Category.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="LibraryAppDataModule.cs" />
@@ -263,6 +271,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803191554014_models.resx">
       <DependentUpon>201803191554014_models.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803221718215_Rename table Authors to Author.resx">
+      <DependentUpon>201803221718215_Rename table Authors to Author.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803221721110_Rename Books and Categories to Book and Category.resx">
+      <DependentUpon>201803221721110_Rename Books and Categories to Book and Category.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

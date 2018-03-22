@@ -6,6 +6,7 @@ using LibraryApp.DomainServices.Categories;
 
 namespace LibraryApp.DomainServices.Books
 {
+	[Table("Book")]
 	public class Book: FullAuditedEntity
 	{
 		[Required]
