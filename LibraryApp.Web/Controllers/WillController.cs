@@ -66,8 +66,7 @@ namespace LibraryApp.Web.Controllers
 			{
 				Id = id,
 				DisplayName = DisplayName,
-				BirthDate = BirthDate,
-				CreationTime = DateTime.Now
+				BirthDate = BirthDate
 			};
 
 			_authorAppService.Update(output);
