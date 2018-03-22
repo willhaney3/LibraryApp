@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.WebSockets;
+using Abp.Web.Security.AntiForgery;
 using LibraryApp.AppServices.Authors;
 using LibraryApp.AppServices.Authors.DTO;
 
@@ -44,7 +45,7 @@ namespace LibraryApp.Web.Controllers
 			
 		}
 
-
+		[DisableAbpAntiForgeryTokenValidation]
 		[HttpPost]
 		public ActionResult Register(string DisplayName, DateTime BirthDate)
 		{
@@ -59,6 +60,7 @@ namespace LibraryApp.Web.Controllers
 			return RedirectToAction("Index", "Will");
 		}
 
+		[DisableAbpAntiForgeryTokenValidation]
 		[HttpPost]
 		public ActionResult Update(int id, string DisplayName, DateTime BirthDate)
 		{

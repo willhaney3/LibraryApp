@@ -7,8 +7,7 @@ namespace LibraryApp.AppServices.Authors.DTO
 	{
 		public int Id { get; set; }
 		public string DisplayName { get; set; }
-
-
+		
 		[DataType(DataType.DateTime)]
 		public DateTime BirthDate { get; set; }
 
