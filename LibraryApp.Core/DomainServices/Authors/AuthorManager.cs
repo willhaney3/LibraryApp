@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Abp.AutoMapper;
 using Abp.Domain.Repositories;
 using Abp.Domain.Services;
 using Abp.UI;
@@ -8,12 +9,14 @@ namespace LibraryApp.DomainServices.Authors
 {
 	public class AuthorManager : DomainService, IAuthorManager
 	{
-		private readonly IRepository<Author> _repositoryAuthor;
+		public IRepository<Author> _repositoryAuthor { get; set; }
 
-		public AuthorManager(IRepository<Author> repositoryAuthor)
-		{
-			_repositoryAuthor = repositoryAuthor;
-		}
+		//private readonly IRepository<Author> _repositoryAuthor;
+
+		//public AuthorManager(IRepository<Author> repositoryAuthor)
+		//{
+		//	_repositoryAuthor = repositoryAuthor;
+		//}
 
 		public IEnumerable<Author> GetAllListAuthors()
 		{
@@ -42,7 +45,16 @@ namespace LibraryApp.DomainServices.Authors
 
 		public void Update(Author entity)
 		{
-			_repositoryAuthor.Update(entity);
+			//_repositoryAuthor.Update(entity);
+
+			var author = _repositoryAuthor.Get(entity.Id);
+			if (author == null)
+			{
+				throw new UserFriendlyException(L("CouldNotFindTheTaskMessage"));
+			}
+			entity.MapTo(author);
+
+
 		}
 
 		public void Delete(int id)

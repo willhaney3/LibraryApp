@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services;
+using Abp.AutoMapper;
+using Abp.UI;
 using AutoMapper;
 using LibraryApp.AppServices.Authors.DTO;
 using LibraryApp.DomainServices.Authors;
@@ -11,12 +13,14 @@ namespace LibraryApp.AppServices.Authors
 	public class AuthorAppService:ApplicationService, IAuthorAppService
 	{
 
-		private readonly IAuthorManager _authorManager;
+		public IAuthorManager _authorManager { get; set; }
 
-		public AuthorAppService(IAuthorManager authorManager)
-		{
-			_authorManager = authorManager;
-		}
+		//private readonly IAuthorManager _authorManager;
+
+		//public AuthorAppService(IAuthorManager authorManager)
+		//{
+		//	_authorManager = authorManager;
+		//}
 
 
 		public IEnumerable<GetAuthorOutput> ListAll()
@@ -57,6 +61,20 @@ namespace LibraryApp.AppServices.Authors
 			var getAuthor = _authorManager.GetAuthorById(input.Id);
 			var output = Mapper.Map<Author, GetAuthorOutput>(getAuthor);
 			return output;
+		}
+
+		public void Update2(UpdateAuthorInput input)
+		{
+
+			var output = Mapper.Map<UpdateAuthorInput, Author>(input);
+			_authorManager.Update(output);
+
+			//var author =  _authorManager.GetAuthorById(input.Id);
+			//if (author == null)
+			//{
+			//	throw new UserFriendlyException(L("CouldNotFindTheTaskMessage"));
+			//}
+			//input.MapTo(author);
 		}
 	}
 }

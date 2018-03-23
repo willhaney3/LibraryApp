@@ -10,6 +10,7 @@ namespace LibraryApp.AppServices.Authors
 		IEnumerable<GetAuthorOutput> ListAll();
 		Task Create(CreateAuthorInput input);
 		void Update(UpdateAuthorInput input);
+		void Update2(UpdateAuthorInput input);
 		void Delete(DeleteAuthorInput input);
 		GetAuthorOutput GetAuthorById(GetAuthorInput input);
 	}

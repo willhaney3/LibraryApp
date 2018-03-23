@@ -17,7 +17,7 @@ namespace LibraryApp.Web.Controllers
 {
 	public class WillController : LibraryAppControllerBase,ITaskAppService
 	{
-		public IRepository<Author> _taskRepository { get; set; }
+		public IRepository<Author> _authorRepository { get; set; }
 
 
 		public IAuthorAppService _authorAppService { get; set; }
@@ -77,6 +77,7 @@ namespace LibraryApp.Web.Controllers
 				BirthDate = BirthDate
 			};
 
+
 			_authorAppService.Update(output);
 
 			return RedirectToAction("Index", "Will");
@@ -92,12 +93,9 @@ namespace LibraryApp.Web.Controllers
 				BirthDate = BirthDate
 			};
 
-			var author =  await _taskRepository.FirstOrDefaultAsync(input.Id);
-			if (author == null)
-			{
-				throw new UserFriendlyException(L("CouldNotFindTheTaskMessage"));
-			}
-			input.MapTo(author);
+			await Task.Run(() => _authorAppService.Update2(input));
+			
+
 
 			return  RedirectToAction("Index", "Will");
 		}
