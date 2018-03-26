@@ -35,7 +35,13 @@ namespace LibraryApp
 
 				//cfg.CreateMap<UpdateAuthorInput, Author>().ForAllOtherMembers(o => o.Ignore());
 				cfg.CreateMap<UpdateAuthorInput, Author>();
+
+				
 				cfg.CreateMap<Author, Author>();
+				//cfg.CreateMap<Author, Author>().ForAllMembers(o => o.Ignore());
+				//cfg.CreateMap<Author, Author>().ForAllOtherMembers(o => o.Ignore());
+
+				cfg.CreateMap<Author, UpdateAuthorInput>();
 
 
 				// Role and permission

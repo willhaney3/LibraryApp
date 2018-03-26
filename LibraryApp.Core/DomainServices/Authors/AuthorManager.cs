@@ -11,13 +11,6 @@ namespace LibraryApp.DomainServices.Authors
 	{
 		public IRepository<Author> _repositoryAuthor { get; set; }
 
-		//private readonly IRepository<Author> _repositoryAuthor;
-
-		//public AuthorManager(IRepository<Author> repositoryAuthor)
-		//{
-		//	_repositoryAuthor = repositoryAuthor;
-		//}
-
 		public IEnumerable<Author> GetAllListAuthors()
 		{
 			return _repositoryAuthor.GetAllIncluding(x => x.Books);
@@ -43,18 +36,24 @@ namespace LibraryApp.DomainServices.Authors
 
 		}
 
-		public void Update(Author entity)
+		public async void Update(Author entity)
 		{
+			// original method from demo app updates CreationTime and puts NULL in CreatorUserId
 			//_repositoryAuthor.Update(entity);
 
-			var author = _repositoryAuthor.Get(entity.Id);
+			var author = await _repositoryAuthor.GetAsync(entity.Id);
+
 			if (author == null)
 			{
 				throw new UserFriendlyException(L("CouldNotFindTheTaskMessage"));
 			}
-			entity.MapTo(author);
+			// this performs the update in the database
+			//entity.MapTo(author);
 
-
+			author.DisplayName = entity.DisplayName;
+			author.BirthDate = entity.BirthDate;
+			
+			
 		}
 
 		public void Delete(int id)

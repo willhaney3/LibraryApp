@@ -15,14 +15,6 @@ namespace LibraryApp.AppServices.Authors
 
 		public IAuthorManager _authorManager { get; set; }
 
-		//private readonly IAuthorManager _authorManager;
-
-		//public AuthorAppService(IAuthorManager authorManager)
-		//{
-		//	_authorManager = authorManager;
-		//}
-
-
 		public IEnumerable<GetAuthorOutput> ListAll()
 		{
 			var getAll = _authorManager.GetAllListAuthors().ToList();
@@ -66,8 +58,8 @@ namespace LibraryApp.AppServices.Authors
 		public void Update2(UpdateAuthorInput input)
 		{
 
-			var output = Mapper.Map<UpdateAuthorInput, Author>(input);
-			_authorManager.Update(output);
+			var author = Mapper.Map<UpdateAuthorInput, Author>(input);
+			_authorManager.Update(author);
 
 			//var author =  _authorManager.GetAuthorById(input.Id);
 			//if (author == null)
