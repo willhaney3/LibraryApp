@@ -106,4 +106,9 @@ namespace LibraryApp.Web.Controllers
 		Task<ActionResult> Update2(int id, string DisplayName, DateTime BirthDate);
 	}
 
+	internal interface ITaskAppService2
+	{
+		Task<ActionResult> Update3(int id, string DisplayName, DateTime BirthDate);
+	}
+
 }
